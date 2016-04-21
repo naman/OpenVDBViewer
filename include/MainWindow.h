@@ -20,6 +20,11 @@
 #define __MAINWINDOW_H__
 
 #include <QMainWindow>
+
+#ifdef Q_FOREACH
+#undef Q_FOREACH
+#endif
+
 #include <QDoubleSpinBox>
 #include "InformationWindow.h"
 #include "AboutWindow.h"

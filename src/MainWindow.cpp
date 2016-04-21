@@ -15,8 +15,12 @@
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
+#ifdef Q_FOREACH
+#undef Q_FOREACH
+#endif
 
 #include "MainWindow.h"
+
 #include "ui_MWindow.h"
 #include <iostream>
 
@@ -24,10 +28,15 @@
 
 #include <QApplication>
 
+#ifdef Q_FOREACH
+#undef Q_FOREACH
+#endif
+
 #include "BoundBox.h"
 #include "Utilities.h"
 
 #include <boost/lexical_cast.hpp>
+#undef Q_FOREACH
 
 MainWindow::MainWindow(QWidget *parent) :QMainWindow(parent),  m_ui(new Ui::MWindow)
 {
